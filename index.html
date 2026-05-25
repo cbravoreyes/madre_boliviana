@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="App educativa sobre el 27 de mayo en Bolivia, los sucesos en la Coronilla y la representación de la mujer boliviana." />
+  <title>27 de mayo y la mujer boliviana</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app" id="app">
+    <header>
+      <section class="hero">
+        <div class="hero-content">
+          <span class="eyebrow">Bolivia · 27 de mayo</span>
+          <h1>La mujer boliviana en la memoria histórica</h1>
+          <p class="subtitle">Ruta interactiva sobre los sucesos en la Coronilla, la Ley de 1927, la madre heroica y la literatura escrita por mujeres.</p>
+          <div class="stats" aria-label="Indicadores de la app">
+            <div class="stat"><strong>30</strong><span>frases</span></div>
+            <div class="stat"><strong>5</strong><span>ejes</span></div>
+            <div class="stat"><strong id="favCount">0</strong><span>favoritas</span></div>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <section id="panelFrases" class="panel active">
+      <div class="toolbar">
+        <input id="search" type="search" placeholder="Buscar: Coronilla, madre, literatura..." />
+        <button id="themeToggle" class="secondary" aria-label="Cambiar tema">◐</button>
+      </div>
+      <div class="chips" id="chips"></div>
+      <div class="section-title">
+        <h2>Frases para explorar</h2>
+        <span id="resultCount">30 resultados</span>
+      </div>
+      <div class="cards" id="cards"></div>
+    </section>
+
+    <section id="panelLinea" class="panel">
+      <div class="section-title">
+        <h2>Línea de tiempo</h2>
+        <span>Memoria y ley</span>
+      </div>
+      <div class="timeline">
+        <article class="event">
+          <strong>1812</strong>
+          <p>La resistencia en la colina de San Sebastián, conocida como la Coronilla, queda vinculada a la memoria de mujeres que defendieron Cochabamba ante el avance realista.</p>
+        </article>
+        <article class="event">
+          <strong>1927</strong>
+          <p>La Ley de 8 de noviembre establece el homenaje del 27 de mayo a la Madre en colegios y establecimientos de instrucción.</p>
+        </article>
+        <article class="event">
+          <strong>Siglo XX</strong>
+          <p>El relato escolar consolida la figura de la madre heroica como símbolo de sacrificio, patria y formación moral.</p>
+        </article>
+        <article class="event">
+          <strong>Lectura actual</strong>
+          <p>La fecha puede estudiarse como reconocimiento a las madres y como entrada crítica al papel histórico, social y literario de las mujeres bolivianas.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="panelQuiz" class="panel">
+      <div class="section-title">
+        <h2>Evaluación breve</h2>
+        <span id="scoreLabel">0 de 0</span>
+      </div>
+      <div class="quiz-box">
+        <p class="question" id="questionText"></p>
+        <div class="options" id="options"></div>
+        <p class="feedback" id="feedback"></p>
+        <button id="nextQuestion">Siguiente pregunta</button>
+      </div>
+    </section>
+
+    <section id="panelFuentes" class="panel">
+      <div class="section-title">
+        <h2>Fuentes de base</h2>
+        <span>APA 7</span>
+      </div>
+      <div class="bibliography">
+        <div class="ref">Ayllón, V. (2016). Estado y mujeres en la obra de cuatro narradoras bolivianas. Recial, 7(9).</div>
+        <div class="ref">Ayllón, V. (2022). La recepción de la obra de Lindaura Anzoátegui de Campero y Adela Zamudio en el mundo público. Revista de Estudios Bolivianos, 34, 15 a 30.</div>
+        <div class="ref">Ayllón, V. (2024). Hilda Mundy, periodista de guerra. Revista Ciencia y Cultura, 28(53), 47.</div>
+        <div class="ref">Groppa, M. L. G. (2019). Hilda Mundy: un ensayo feminista de la literatura vanguardista en América Latina. Revista de Literaturas Modernas.</div>
+        <div class="ref">Ley de 8 de noviembre de 1927. Día de la Madre. Legislación boliviana.</div>
+        <div class="ref">Pau, A. (2013). Las heroínas de la Coronilla, entre la realidad y el mito. Opinión.</div>
+        <div class="ref">Servicio Estatal de Autonomías. Heroínas de la Coronilla.</div>
+      </div>
+      <footer>
+        Elaborado para uso educativo. Carlos Bravo Reyes · Observatorio de Tecnología e Innovación educativa.2026
+      </footer>
+    </section>
+  </main>
+
+  <nav class="tabs" aria-label="Navegación principal">
+    <button class="tab active" data-panel="panelFrases">Frases</button>
+    <button class="tab" data-panel="panelLinea">Historia</button>
+    <button class="tab" data-panel="panelQuiz">Quiz</button>
+    <button class="tab" data-panel="panelFuentes">Fuentes</button>
+  </nav>
+
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <span class="tag" id="modalTag"></span>
+      <h3 id="modalTitle"></h3>
+      <p id="modalText"></p>
+      <div class="source" id="modalSource"></div>
+      <button id="closeModal">Cerrar</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
